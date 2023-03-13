@@ -1,0 +1,5 @@
+main
+	__CC2DW
+	leBotao
+		ADC_Read
+			Delay_22us

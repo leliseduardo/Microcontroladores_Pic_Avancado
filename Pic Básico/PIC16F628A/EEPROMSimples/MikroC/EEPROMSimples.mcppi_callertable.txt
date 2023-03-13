@@ -1,0 +1,7 @@
+main
+	__CC2DW
+		____DoICP
+	EEPROM_Read
+	contador
+	escreveMemoria
+		EEPROM_Write

@@ -1,0 +1,5 @@
+main
+	__CC2DW
+	SPI1_Init
+	leitura_Botoes
+	SPI1_Write

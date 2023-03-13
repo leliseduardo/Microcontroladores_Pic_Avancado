@@ -1,0 +1,12 @@
+main
+	__CC2DW
+		____DoICP
+	textoInicio
+		bufferTeste
+	motorLigado
+		bufferTeste
+	motorDesligado
+		bufferTeste
+interrupt
+	eco
+		bufferTeste

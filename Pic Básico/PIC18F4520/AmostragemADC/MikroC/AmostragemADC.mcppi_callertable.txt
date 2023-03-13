@@ -1,0 +1,4 @@
+main
+	__CC2DW
+	ADC_Read
+		Delay_22us

@@ -1,0 +1,12 @@
+main
+	__CC2DW
+		____DoICP
+	ultimoGravado
+		varreduraMemoria
+			EEPROM_Read
+	salvaMemoria
+		varreduraMemoria
+			EEPROM_Read
+		apagaMemoria
+			EEPROM_Write
+		EEPROM_Write

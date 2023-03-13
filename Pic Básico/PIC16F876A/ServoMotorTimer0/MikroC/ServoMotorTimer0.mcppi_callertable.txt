@@ -1,0 +1,7 @@
+main
+	__CC2DW
+		____DoICP
+	ADC_Read
+		Delay_22us
+	Div_16x16_U
+interrupt

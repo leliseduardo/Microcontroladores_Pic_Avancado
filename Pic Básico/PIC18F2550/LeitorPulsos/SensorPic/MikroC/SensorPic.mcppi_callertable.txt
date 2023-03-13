@@ -1,0 +1,7 @@
+main
+	__CC2DW
+		____DoICP
+	pulso_Saida
+interrupt
+	ADC_Read
+		Delay_22us

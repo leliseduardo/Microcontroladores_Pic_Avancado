@@ -1,0 +1,13 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP16F628A -GC -DL -O11111114 -fo4 -N"C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic Básico\PIC16F628A\PWM4Interrupcoes\MikroC\PWM4Interrupcoes.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic Básico\PIC16F628A\PWM4Interrupcoes\MikroC\" "PWM4Interrupcoes.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CType.mcl" "__Lib_CString.mcl" "__Lib_CStdlib.mcl" "__Lib_CMath.mcl" "__Lib_Conversions.mcl" "__Lib_Sprinti.mcl" "__Lib_Sprintl.mcl" "__Lib_Time.mcl" "__Lib_Trigonometry.mcl" "__Lib_Button.mcl" "__Lib_Keypad4x4.mcl" "__Lib_Manchester.mcl" "__Lib_OneWire.mcl" "__Lib_PS2.mcl" "__Lib_Sound.mcl" "__Lib_SoftI2C.mcl" "__Lib_SoftSPI.mcl" "__Lib_SoftUART.mcl" "__Lib_EEPROM.mcl" "__Lib_PWM_b3.mcl" "__Lib_UART_b21.mcl" "__Lib_CF.mcl" "__Lib_GlcdFonts.mcl" "__Lib_Glcd.mcl" "__Lib_LcdConsts.mcl" "__Lib_Lcd.mcl" "__Lib_RS485.mcl" "__Lib_T6963C.mcl"	 
+hint: 0	1139	Available RAM: 208 [bytes], Available ROM: 2048 [bytes]	 
+diagnostics: 0	126	All files Preprocessed in 141 ms	 
+diagnostics: 0	122	Compilation Started	PWM4Interrupcoes.c
+diagnostics: 233	123	Compiled Successfully	PWM4Interrupcoes.c
+diagnostics: 0	127	All files Compiled in 172 ms	 
+hint: 0	1144	Used RAM (bytes): 49 (24%)  Free RAM (bytes): 159 (76%)	Used RAM (bytes): 49 (24%)  Free RAM (bytes): 159 (76%)
+hint: 0	1144	Used ROM (program words): 762 (37%)  Free ROM (program words): 1286 (63%)	Used ROM (program words): 762 (37%)  Free ROM (program words): 1286 (63%)
+diagnostics: 0	125	Project Linked Successfully	PWM4Interrupcoes.mcppi
+hint: 0	1004	COFF file successfully generated	COFF file successfully generated
+diagnostics: 0	128	Linked in 359 ms	 
+diagnostics: 0	129	Project 'PWM4Interrupcoes.mcppi' completed: 734 ms	 
+diagnostics: 0	103	Finished successfully: 18 mai 2020, 23:18:30	PWM4Interrupcoes.mcppi

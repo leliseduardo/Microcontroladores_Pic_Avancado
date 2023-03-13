@@ -1,0 +1,8 @@
+main
+	__CC2DW
+		____DoICP
+	textoInicio
+		bufferTeste
+interrupt
+	eco
+		bufferTeste

@@ -1,0 +1,12 @@
+main
+	__CC2DW
+		____DoICP
+interrupt
+	passo1
+	passo2
+	passo3
+	passo4
+	passo5
+	passo6
+	passo7
+	passo8

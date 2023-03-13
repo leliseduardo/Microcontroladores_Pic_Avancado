@@ -1,0 +1,6 @@
+main
+	__CC2DW
+	volts
+		Div_16x16_U
+		ADC_Read
+			Delay_22us

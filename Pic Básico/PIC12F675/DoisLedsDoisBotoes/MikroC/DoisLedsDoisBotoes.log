@@ -1,0 +1,12 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP12F675 -DL -O11111114 -fo4 -N"C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic Básico\PIC12F675\DoisLedsDoisBotoes\MikroC\DoisLedsDoisBotoes.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16\" -SP"C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic Básico\PIC12F675\DoisLedsDoisBotoes\MikroC\" "DoisLedsDoisBotoes.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CType.mcl" "__Lib_CString.mcl" "__Lib_CStdlib.mcl" "__Lib_CMath.mcl" "__Lib_Conversions.mcl" "__Lib_Sprinti.mcl" "__Lib_Sprintl.mcl" "__Lib_Time.mcl" "__Lib_Trigonometry.mcl" "__Lib_Button.mcl" "__Lib_Manchester.mcl" "__Lib_OneWire.mcl" "__Lib_PS2.mcl" "__Lib_Sound.mcl" "__Lib_SoftI2C.mcl" "__Lib_SoftSPI.mcl" "__Lib_SoftUART.mcl" "__Lib_ADC_A_E.mcl" "__Lib_EEPROM.mcl" "__Lib_LcdConsts.mcl" "__Lib_Lcd.mcl"	 
+hint: 0	1139	Available RAM: 48 [bytes], Available ROM: 1024 [bytes]	 
+diagnostics: 0	126	All files Preprocessed in 469 ms	 
+diagnostics: 0	122	Compilation Started	DoisLedsDoisBotoes.c
+diagnostics: 34	123	Compiled Successfully	DoisLedsDoisBotoes.c
+diagnostics: 0	127	All files Compiled in 453 ms	 
+hint: 0	1144	Used RAM (bytes): 3 (6%)  Free RAM (bytes): 45 (94%)	Used RAM (bytes): 3 (6%)  Free RAM (bytes): 45 (94%)
+hint: 0	1144	Used ROM (program words): 67 (7%)  Free ROM (program words): 957 (93%)	Used ROM (program words): 67 (7%)  Free ROM (program words): 957 (93%)
+diagnostics: 0	125	Project Linked Successfully	DoisLedsDoisBotoes.mcppi
+diagnostics: 0	128	Linked in 266 ms	 
+diagnostics: 0	129	Project 'DoisLedsDoisBotoes.mcppi' completed: 1750 ms	 
+diagnostics: 0	103	Finished successfully: 24 set 2020, 19:10:53	DoisLedsDoisBotoes.mcppi
