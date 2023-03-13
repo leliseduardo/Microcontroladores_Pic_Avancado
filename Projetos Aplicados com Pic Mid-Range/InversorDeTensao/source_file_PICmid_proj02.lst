@@ -1,0 +1,524 @@
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 ; =======================================================================================
+                      00002 ;
+                      00003 ;   Projetos Aplicados com PIC Mid-Range
+                      00004 ;
+                      00005 ;   Oscilador para Inversor de Tensão (Projeto 1)
+                      00006 ;
+                      00007 ;   Gera dois sinais de 60Hz em contra-fase
+                      00008 ;
+                      00009 ;   Sinais gerados por interrupção do Timer0
+                      00010 ;
+                      00011 ;   Compilador: MPLAB IDE v8.92
+                      00012 ;
+                      00013 ;   MCU: PIC12F675   Clock: Externo 16MHz   CM: 250ns
+                      00014 ;
+                      00015 ;   Autor: Eng. Wagner Rambo
+                      00016 ;
+                      00017 ;   Data: Abril de 2018
+                      00018 ;
+                      00019 ; =======================================================================================
+                      00020 
+                      00021 
+                      00022 ; =======================================================================================
+                      00023 ; --- Listagem e Inclusão de Arquivos ---
+                      00024         list            p=12f675                                        ;Microcontrolador utilizado no p
+                            rojeto
+                      00025         #include        <p12f675.inc>                           ;Inclui arquivo com registradores do PIC
+                            12F675
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC12F675 processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00366         LIST
+                      00026 
+                      00027 
+                      00028 ; =======================================================================================
+                      00029 ; --- FUSE Bits ---
+                      00030 ; -> Oscilador Externo 16MHz;
+                      00031 ; -> Sem WatchDog Timer;
+                      00032 ; -> Power Up Timer Habilitado;
+                      00033 ; -> Master Clear Desabilitado;
+                      00034 ; -> Sem Brown Out;
+                      00035 ; -> Sem proteções.
+                      00036 
+2007   3F82           00037         __config        _HS_OSC & _WDT_OFF & _PWRTE_ON & _MCLRE_OFF & _BOREN_OFF & _CP_OFF & _CPD_OFF
+                      00038 
+                      00039 
+                      00040 ; =======================================================================================
+                      00041 ; --- Paginação de Memória ---
+                      00042 
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00043         #define bank0   bcf     STATUS,RP0                      ;cria mnemônico para seleção do banco 0 
+                            de memória
+                      00044         #define bank1   bsf     STATUS,RP0                      ;cria mnemônico para seleção do banco 1 
+                            de memória
+                      00045 
+                      00046 
+                      00047 ; =======================================================================================
+                      00048 ; --- Definicação de Saídas ---
+                      00049 
+                      00050         #define osc_a           GPIO,GP0                        ;oscilador a
+                      00051         #define osc_b           GPIO,GP1                        ;oscilador b
+                      00052 
+                      00053 
+                      00054 ; =======================================================================================
+                      00055 ; --- Registradores de Uso Geral ---
+                      00056 
+                      00057         cblock  H'20'                                                   ;Início da memória disponível pa
+                            ra o usuário
+                      00058         
+  00000020            00059         W_TEMP                                                                  ;Armazena valor temporár
+                            io de W
+  00000021            00060         STATUS_TEMP                                                             ;Armazena valor temporár
+                            io de STATUS
+  00000022            00061         AUX
+                      00062         
+                      00063         endc                                                                    ;Final da memória dispon
+                            ível para o usuário
+                      00064 
+                      00065 
+                      00066 ; =======================================================================================
+                      00067 ; --- Vetor de RESET ---
+                      00068 
+0000                  00069         org                     H'0000'                                         ;Origem no endereço 00h 
+                            de memória
+0000   2828           00070         goto            inicio                                          ;Desvia do vetor de interrupção
+                      00071         
+                      00072 
+                      00073 ; =======================================================================================
+                      00074 ; --- Vetor de Interrupção ---
+                      00075 
+0004                  00076         org                     H'0004'                                         ;Todas interrupções apon
+                            tam para este endereço na memória de programa
+                      00077         
+                      00078 ; -- Salva Contexto --
+0004   00A0           00079         movwf           W_TEMP                                          ;Salva conteúdo de Work no regis
+                            trador W_TEMP
+0005   0E03           00080         swapf           STATUS,W                                        ;Carrega conteúdo de STATUS no r
+                            egistrador Work com nibbles invertidos
+0006   1283           00081         bank0                                                                   ;Seleciona o banco 0 de 
+                            memória
+0007   00A1           00082         movwf           STATUS_TEMP                                     ;Salva conteúdo de STATUS no reg
+                            istrador STATUS_TEMP
+                      00083         
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00084 ; -- Teste das flags --
+0008   190B           00085         btfsc           INTCON,T0IF                                     ;Ocorreu overflow do Timer0?
+0009   280B           00086         goto            trata_TMR0                                      ;Sim, desvia para tratar interru
+                            pção do Timer0
+000A   2823           00087         goto            exit_ISR                                        ;Não, desvia para saída de inter
+                            rupção
+                      00088                 
+                      00089         
+                      00090 ; -- Trata Interrupção do Timer0 --
+000B                  00091 trata_TMR0:
+000B   110B           00092         bcf                     INTCON,T0IF                                     ;Limpa flag
+000C   307E           00093     movlw               H'7E'                                           ;Carrega literal 126d para o reg
+                            istrador Work
+000D   0081           00094         movwf           TMR0                                            ;Reinicializa TMR0 com 126d
+                      00095 
+                      00096 
+                      00097 ; -- Base de Tempo de 8.333ms --
+                      00098 
+                      00099         
+                      00100 
+000E                  00101 delay:                                                                          ;compensação de 26 ciclo
+                            s de máquina
+Message[305]: Using default destination of 1 (file).
+000E   0BA2           00102         decfsz      AUX                                                 ;decrementa aux. Chegou em zero?
+000F   280E           00103         goto        delay                                               ;não. Desvia para label delay
+0010   3007           00104         movlw           D'7'                                            ;sim. Move literal 7d para Work
+0011   00A2           00105         movwf           AUX                                                     ;recarrega AUX com 7d
+0012   0000           00106         nop                                                                             ;sem operação po
+                            r 1CM
+                      00107  
+                      00108 
+0013   1C05           00109         btfss           osc_a
+0014   2818           00110         goto            dead_t_a
+0015   1C85           00111         btfss           osc_b
+0016   281E           00112         goto            dead_t_b
+0017   2823           00113         goto            exit_ISR
+                      00114  
+                      00115         
+0018                  00116 dead_t_a:
+0018   1085           00117         bcf                     osc_b   
+0019   0000           00118         nop
+001A   0000           00119         nop
+001B   3001           00120         movlw           H'01'
+001C   0685           00121         xorwf           GPIO,F
+001D   2823           00122         goto            exit_ISR
+                      00123         
+001E                  00124 dead_t_b:
+001E   1005           00125         bcf                     osc_a
+001F   0000           00126         nop
+0020   0000           00127         nop
+0021   3002           00128         movlw           H'02'
+0022   0685           00129         xorwf           GPIO,F
+                      00130 
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00131         
+                      00132 ; -- Recupera Contexto (Saída de Interrupção ) --
+0023                  00133 exit_ISR:
+0023   0E21           00134         swapf           STATUS_TEMP,W                           ;Carrega conteúdo de STATUS_TEMP no regi
+                            strador Work
+0024   0083           00135         movwf           STATUS                                          ;Recupera STATUS pré ISR
+0025   0EA0           00136         swapf           W_TEMP,F                                        ;Inverte nibbles do W_TEMP e arm
+                            azena em W_TEMP
+0026   0E20           00137         swapf           W_TEMP,W                                        ;Inverte novamente nibbles de W_
+                            TEMP armazendo em Work (Recupera Work pré ISR)
+0027   0009           00138         retfie                                                                  ;Retorna da interrupção
+                      00139         
+                      00140 
+                      00141 ; =======================================================================================
+                      00142 ; --- Configurações Iniciais ---
+0028                  00143 inicio:
+                      00144 
+0028   1683           00145         bank1                                                                   ;Seleciona banco1 de mem
+                            ória
+0029   303C           00146         movlw           H'3C'                                           ;Carrega literal 00111100b para 
+                            o registrador Work
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+002A   0085           00147         movwf           TRISIO                                          ;Configura GP0 e GP1 como saída 
+                            (TRISIO = 0x3C)
+002B   3087           00148         movlw           H'87'                                           ;Carrega literal 10000111b para 
+                            o registrador Work
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+002C   0081           00149         movwf           OPTION_REG                                      ;(OPTION_REG = 0x87)
+                      00150                                                                                         ; - Desabilita P
+                            ull-Ups internos
+                      00151                                                                                         ; - TMR0 increme
+                            nta pelo ciclo de máquina
+                      00152                                                                                         ; - Prescaler do
+                             TMR0 1:256
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+002D   019F           00153         clrf            ANSEL                                           ;Apenas pinos digitais (ANSEL = 
+                            0x00)
+                      00154                                                                                         
+002E   1283           00155         bank0                                                                   ;Seleciona banco0 de mem
+                            ória
+002F   3007           00156         movlw           H'07'                                           ;Carrega literal 00000111b para 
+                            o registrador work
+0030   0099           00157         movwf           CMCON                                           ;desabilita comparadores interno
+                            s
+0031   30A0           00158         movlw           H'A0'                                           ;Carrega literal 10100000b para 
+                            o registrador Work
+0032   008B           00159         movwf           INTCON                                          ;(INTCON = 0xA0)                
+                      00160                                                                                         ; - Habilita int
+                            errupção global
+                      00161                                                                                         ; - Habilita int
+                            errupção do Timer0
+0033   307E           00162         movlw           H'7E'                                           ;Carrega literal 126d para o reg
+                            istrador Work
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0034   0081           00163         movwf           TMR0                                            ;Inicializa TMR0 com 126d
+                      00164         
+                      00165         ;
+                      00166         ;  T0_ovf = (256 - TMR0) x prescaler x CM
+                      00167         ;  T0_ovf = (256 - 126 ) x   256     x 250E-9
+                      00168         ;  T0_ovf = 8.32ms *
+                      00169         ;
+                      00170         ;
+                      00171         ; *será realizado ajuste fino para obter a base de tempo de 8.333ms
+                      00172         
+                      00173         
+0035   3007           00174         movlw           D'7'                                            ;Carrega literal 7d para o regis
+                            trador Work
+0036   00A2           00175         movwf           AUX                                                     ;Inicializa AUX em 7d
+                      00176         
+0037   1005           00177         bcf                     osc_a                                           ;osc_a inicia em low
+0038   1485           00178         bsf                     osc_b                                           ;osc_b inicia em high
+                      00179 
+                      00180 
+                      00181  
+                      00182 ; =======================================================================================
+                      00183 ; --- Loop Infinito --- 
+                      00184          
+                      00185  
+0039   2839           00186         goto            $                                                       ;Desvia para o endereço 
+                            atual da memória de programa
+                      00187         
+                      00188         
+                      00189 ; =======================================================================================       
+                      00190 ; --- Final do Programa ---     
+                      00191         end                                                                             ;Final do progra
+                            ma
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADCON0                            0000001F
+ADCS0                             00000004
+ADCS1                             00000005
+ADCS2                             00000006
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+ANS0                              00000000
+ANS1                              00000001
+ANS2                              00000002
+ANS3                              00000003
+ANSEL                             0000009F
+AUX                               00000022
+C                                 00000000
+CAL0                              00000002
+CAL1                              00000003
+CAL2                              00000004
+CAL3                              00000005
+CAL4                              00000006
+CAL5                              00000007
+CHS0                              00000002
+CHS1                              00000003
+CINV                              00000004
+CIS                               00000003
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             00000019
+CMIE                              00000003
+CMIF                              00000003
+COUT                              00000006
+DC                                00000001
+EEADR                             0000009B
+EECON1                            0000009C
+EECON2                            0000009D
+EEDAT                             0000009A
+EEDATA                            0000009A
+EEIE                              00000007
+EEIF                              00000007
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+GO                                00000001
+GO_DONE                           00000001
+GO_NOT_DONE                       00000001
+GP0                               00000000
+GP1                               00000001
+GP2                               00000002
+GP3                               00000003
+GP4                               00000004
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+GP5                               00000005
+GPIE                              00000003
+GPIF                              00000000
+GPIO                              00000005
+GPIO0                             00000000
+GPIO1                             00000001
+GPIO2                             00000002
+GPIO3                             00000003
+GPIO4                             00000004
+GPIO5                             00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IOC                               00000096
+IOC0                              00000000
+IOC1                              00000001
+IOC2                              00000002
+IOC3                              00000003
+IOC4                              00000004
+IOC5                              00000005
+IOCB                              00000096
+IOCB0                             00000000
+IOCB1                             00000001
+IOCB2                             00000002
+IOCB3                             00000003
+IOCB4                             00000004
+IOCB5                             00000005
+IRP                               00000007
+NOT_BOD                           00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000001
+NOT_GPPU                          00000007
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+OPTION_REG                        00000081
+OSCCAL                            00000090
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PIE1                              0000008C
+PIR1                              0000000C
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+STATUS                            00000003
+STATUS_TEMP                       00000021
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1IE                              00000000
+T1IF                              00000000
+T1OSCEN                           00000003
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1                              0000000E
+TMR1CS                            00000001
+TMR1GE                            00000006
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TRISIO                            00000085
+TRISIO0                           00000000
+TRISIO1                           00000001
+TRISIO2                           00000002
+TRISIO3                           00000003
+TRISIO4                           00000004
+TRISIO5                           00000005
+VCFG                              00000006
+VR0                               00000000
+VR1                               00000001
+VR2                               00000002
+VR3                               00000003
+VRCON                             00000099
+VREN                              00000007
+VRR                               00000005
+W                                 00000000
+WPU                               00000095
+WPU0                              00000000
+WPU1                              00000001
+WPU2                              00000002
+WPU4                              00000004
+WPU5                              00000005
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+W_TEMP                            00000020
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_BOREN_ON                         00003FFF
+_CONFIG                           00002007
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_OFF                           00003FFF
+_CP_ON                            00003F7F
+_DEVID1                           00002006
+_EC_OSC                           00003FFB
+_EXTRC_OSC_CLKOUT                 00003FFF
+_EXTRC_OSC_NOCLKOUT               00003FFE
+_FOSC_EC                          00003FFB
+_FOSC_EXTRCCLK                    00003FFF
+_FOSC_EXTRCIO                     00003FFE
+_FOSC_HS                          00003FFA
+_FOSC_INTRCCLK                    00003FFD
+_FOSC_INTRCIO                     00003FFC
+_FOSC_LP                          00003FF8
+_FOSC_XT                          00003FF9
+_HS_OSC                           00003FFA
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_INTRC_OSC_CLKOUT                 00003FFD
+_INTRC_OSC_NOCLKOUT               00003FFC
+_LP_OSC                           00003FF8
+_MCLRE_OFF                        00003FDF
+_MCLRE_ON                         00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FEF
+_WDTE_OFF                         00003FF7
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FF7
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FF9
+__12F675                          00000001
+__DEBUG                           1
+bank0                             bcf     STATUS,RP0
+bank1                             bsf     STATUS,RP0
+dead_t_a                          00000018
+dead_t_b                          0000001E
+delay                             0000000E
+exit_ISR                          00000023
+inicio                            00000028
+osc_a                             GPIO,GP0
+osc_b                             GPIO,GP1
+trata_TMR0                        0000000B
+MPASM  5.51     SOURCE_FILE_PICMID_PROJ02.ASM   4-10-2018  23:06:08         PAGE 10
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXX------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    55
+Program Memory Words Free:   969
+
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     4 reported,     0 suppressed
+
+

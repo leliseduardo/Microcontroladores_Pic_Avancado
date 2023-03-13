@@ -1,0 +1,664 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+idloc IDLOC 0 200000 200000 8 1
+reset_vec CODE 0 0 0 4 1
+end_init CODE 0 16 16 4 1
+config CONFIG 0 300000 300000 E 1
+$dist/default/production\InterrupcaoTimer0.X.production.obj
+cinit CODE 0 DDE DDE E 1
+intcode_body CODE 0 AFC AFC 82 1
+text0 CODE 0 9C0 9C0 B8 1
+text1 CODE 0 B7E B7E 52 1
+text2 CODE 0 DBA DBA 24 1
+text3 CODE 0 D30 D30 38 1
+text4 CODE 0 D92 D92 28 1
+text5 CODE 0 CB0 CB0 42 1
+text6 CODE 0 BD0 BD0 52 1
+text7 CODE 0 C6C C6C 44 1
+text8 CODE 0 D68 D68 2A 1
+text9 CODE 0 CF2 CF2 3E 1
+nvCOMRAM COMRAM 1 33 33 2 1
+text10 CODE 0 810 810 D8 1
+text11 CODE 0 8E8 8E8 D8 1
+text12 CODE 0 C22 C22 4A 1
+text13 CODE 0 A78 A78 84 1
+cstackCOMRAM COMRAM 1 1 1 32 1
+temp COMRAM 1 35 35 1 1
+intcode CODE 0 8 8 E 1
+smallconst SMALLCONST 0 800 800 10 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-7FF 1
+SFR F60-FFF 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+CONST 4-7 1
+CONST 1A-7FF 1
+CONST DEC-7FFF 1
+STACK 60-7FF 1
+SMALLCONST DEC-7FFF 1
+CODE 4-7 1
+CODE 1A-7FF 1
+CODE DEC-7FFF 1
+BIGRAM 36-7FF 1
+COMRAM 36-5F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST DEC-7FFF 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\InterrupcaoTimer0.X.production.obj
+8 intcode CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+8 intcode CODE >39:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+AFC intcode_body CODE >39:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B2E intcode_body CODE >41:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B32 intcode_body CODE >43:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B34 intcode_body CODE >45:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B38 intcode_body CODE >47:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B42 intcode_body CODE >51:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+A78 text13 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+A78 text13 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+A7C text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+A80 text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+A88 text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+A8C text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+A90 text13 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+A98 text13 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+A9C text13 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AA4 text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AAC text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AB0 text13 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AB2 text13 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AB8 text13 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+ABA text13 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+ABE text13 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AC4 text13 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AD0 text13 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AD8 text13 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+ADA text13 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AE0 text13 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AE4 text13 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AEA text13 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+AF2 text13 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
+C22 text12 CODE >101:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C22 text12 CODE >106:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C2C text12 CODE >107:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C5A text12 CODE >106:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8E8 text11 CODE >169:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8EA text11 CODE >173:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+902 text11 CODE >176:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+924 text11 CODE >177:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+93A text11 CODE >173:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+948 text11 CODE >181:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+952 text11 CODE >182:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+95C text11 CODE >183:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+966 text11 CODE >184:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+970 text11 CODE >185:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+972 text11 CODE >186:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+974 text11 CODE >187:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+976 text11 CODE >188:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+978 text11 CODE >189:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+984 text11 CODE >191:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+98E text11 CODE >192:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+998 text11 CODE >193:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+9A2 text11 CODE >194:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+9AC text11 CODE >195:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+9AE text11 CODE >196:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+9B0 text11 CODE >197:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+9B2 text11 CODE >198:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+9BE text11 CODE >199:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+810 text10 CODE >116:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+812 text10 CODE >121:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+82A text10 CODE >124:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+84C text10 CODE >125:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+862 text10 CODE >121:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+870 text10 CODE >130:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+87A text10 CODE >131:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+884 text10 CODE >132:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+88E text10 CODE >133:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+898 text10 CODE >134:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+89A text10 CODE >135:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+89C text10 CODE >136:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+89E text10 CODE >137:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8A0 text10 CODE >138:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8AC text10 CODE >140:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8B6 text10 CODE >141:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8C0 text10 CODE >142:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8CA text10 CODE >143:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8D4 text10 CODE >144:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8D6 text10 CODE >145:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8D8 text10 CODE >146:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8DA text10 CODE >147:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+8E6 text10 CODE >148:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+CF2 text9 CODE >202:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+CF4 text9 CODE >204:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+CF8 text9 CODE >205:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+CFA text9 CODE >207:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D02 text9 CODE >208:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D08 text9 CODE >209:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D0A text9 CODE >211:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D12 text9 CODE >212:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D18 text9 CODE >227:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D1A text9 CODE >205:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D28 text9 CODE >231:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D2E text9 CODE >232:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D68 text8 CODE >234:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D68 text8 CODE >236:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D6A text8 CODE >238:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D7A text8 CODE >239:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D7E text8 CODE >236:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C6C text7 CODE >243:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C6E text7 CODE >245:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C72 text7 CODE >246:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C74 text7 CODE >248:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C7C text7 CODE >249:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C82 text7 CODE >250:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C84 text7 CODE >252:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C8C text7 CODE >253:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C92 text7 CODE >266:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+C94 text7 CODE >246:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+CA2 text7 CODE >270:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+CAE text7 CODE >272:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+BD0 text6 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BD0 text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BD8 text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BE0 text6 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BE4 text6 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BE6 text6 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BEC text6 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BEE text6 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BF2 text6 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+BF8 text6 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+C04 text6 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+C0C text6 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+C0E text6 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+C14 text6 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+C18 text6 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+C18 text6 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+C20 text6 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+CB0 text5 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CB0 text5 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CB8 text5 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CBC text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CBE text5 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CC4 text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CC6 text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CCA text5 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CD6 text5 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CDE text5 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CE4 text5 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CE8 text5 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CE8 text5 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+CF0 text5 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+D92 text4 CODE >77:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D92 text4 CODE >80:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D94 text4 CODE >81:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D96 text4 CODE >82:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DAA text4 CODE >83:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DAC text4 CODE >84:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DB2 text4 CODE >85:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DB8 text4 CODE >86:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D30 text3 CODE >150:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D30 text3 CODE >152:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D32 text3 CODE >153:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D34 text3 CODE >154:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D36 text3 CODE >155:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D38 text3 CODE >156:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D3A text3 CODE >157:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D3C text3 CODE >159:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D48 text3 CODE >160:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D4E text3 CODE >162:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D54 text3 CODE >164:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D5A text3 CODE >165:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D60 text3 CODE >166:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+D66 text3 CODE >167:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DBA text2 CODE >88:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DBA text2 CODE >90:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DCC text2 CODE >91:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DCE text2 CODE >92:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DD0 text2 CODE >93:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DD4 text2 CODE >94:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+DDC text2 CODE >95:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\PICLibs.h
+B7E text1 CODE >22:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B7E text1 CODE >24:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B82 text1 CODE >25:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B86 text1 CODE >26:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B8A text1 CODE >27:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B8C text1 CODE >28:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B90 text1 CODE >29:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B92 text1 CODE >31:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+B9E text1 CODE >32:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+BB2 text1 CODE >33:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+BCA text1 CODE >35:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+BCE text1 CODE >37:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+9C0 text0 CODE >53:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+9C0 text0 CODE >55:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+9C4 text0 CODE >59:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+9E4 text0 CODE >61:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+9F6 text0 CODE >62:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+A1A text0 CODE >63:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+A52 text0 CODE >64:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+A76 text0 CODE >57:C:\Users\eleli\Documents\Cursos\Curso de Pic\Pic MPLAB X\PIC18F2550\InterrupcaoTimer0\MPLAB\InterrupcaoTimer0.X\main.c
+DDE cinit CODE >640:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DDE cinit CODE >642:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DDE cinit CODE >645:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DDE cinit CODE >651:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DDE cinit CODE >653:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DE0 cinit CODE >654:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DE2 cinit CODE >656:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DE4 cinit CODE >657:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DE6 cinit CODE >658:C:\Users\eleli\AppData\Local\Temp\s9u8.
+DE8 cinit CODE >659:C:\Users\eleli\AppData\Local\Temp\s9u8.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___awdiv@counter 13 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwmod@counter 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hspace_0 30000E 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hspace_1 36 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hspace_2 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_ADC_Inicializa 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lsmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\InterrupcaoTimer0.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+_main 9C0 0 CODE 0 text0 dist/default/production\InterrupcaoTimer0.X.production.obj
+btemp 35 0 COMRAM 1 temp dist/default/production\InterrupcaoTimer0.X.production.obj
+?_leitura_ADC F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+start 16 0 CODE 0 init C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+__size_of___awdiv 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of___lwdiv 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of___lwmod 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Char@dat 29 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+_LCD_Char 8E8 0 CODE 0 text11 dist/default/production\InterrupcaoTimer0.X.production.obj
+_LCD_Init D30 0 CODE 0 text3 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hpowerup 16 0 CODE 0 powerup dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_leitura_ADC 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__accesstop 60 0 ABS 0 - C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+__end_of_LCD_Char 9C0 0 CODE 0 text11 dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_LCD_Init D68 0 CODE 0 text3 dist/default/production\InterrupcaoTimer0.X.production.obj
+intlevel0 0 0 CODE 0 text C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+intlevel1 0 0 CODE 0 text C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+intlevel2 0 0 CODE 0 text C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+intlevel3 0 0 CODE 0 text C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+__CFG_USBDIV$2 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\InterrupcaoTimer0.X.production.obj
+___awdiv@sign 14 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\InterrupcaoTimer0.X.production.obj
+___awdiv@dividend F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+_LCD_String D68 0 CODE 0 text8 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hintcodelo 16 0 CODE 0 intcodelo dist/default/production\InterrupcaoTimer0.X.production.obj
+leitura_ADC@canal F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+___awdiv@divisor 11 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwmod@divisor 18 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of___awdiv AFC 0 CODE 0 text13 dist/default/production\InterrupcaoTimer0.X.production.obj
+_valorADC 33 0 COMRAM 1 nvCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of___lwdiv C22 0 CODE 0 text6 dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of___lwmod CF2 0 CODE 0 text5 dist/default/production\InterrupcaoTimer0.X.production.obj
+_INTCON FF2 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Char_xy@location 2F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwdiv@quotient 13 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_setup 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_LCD_Char_xy D30 0 CODE 0 text9 dist/default/production\InterrupcaoTimer0.X.production.obj
+__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwmod@dividend 16 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lintcodelo 16 0 CODE 0 intcodelo dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+start_initialization DDE 0 CODE 0 cinit dist/default/production\InterrupcaoTimer0.X.production.obj
+_OSCCON FD3 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_LCD_String D92 0 CODE 0 text8 dist/default/production\InterrupcaoTimer0.X.production.obj
+___rparam_used 1 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_LCD_Command 8E8 0 CODE 0 text10 dist/default/production\InterrupcaoTimer0.X.production.obj
+ADC_Inicializa@canal F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+_TMR0IF 7F92 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TRISB2 7C9A 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TRISB3 7C9B 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TRISB4 7C9C 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TRISB5 7C9D 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TRISB6 7C9E 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TRISB7 7C9F 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_String_xy@msg 2F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_String_xy@pos 2E 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_String_xy@row 31 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbank6 0 0 ABS 0 bank6 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbank7 0 0 ABS 0 bank7 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hcinit 0 0 ABS 0 cinit dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hconst 0 0 CONST 0 const dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hidata 0 0 CODE 0 idata dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hparam 0 0 COMRAM 1 rparam dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Char_xy@dat 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Char_xy@pos 2C 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Char_xy@row 2E 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hstack 0 0 STACK 2 stack dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext0 0 0 ABS 0 text0 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext1 0 0 ABS 0 text1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext2 0 0 ABS 0 text2 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext3 0 0 ABS 0 text3 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext4 0 0 ABS 0 text4 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext5 0 0 ABS 0 text5 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext6 0 0 ABS 0 text6 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext7 0 0 ABS 0 text7 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext8 0 0 ABS 0 text8 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext9 0 0 ABS 0 text9 dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwdiv@counter 15 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Char@OUTS 19 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbigram 0 0 ABS 0 bigram dist/default/production\InterrupcaoTimer0.X.production.obj
+__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+_LCD_String_xy C6C 0 CODE 0 text7 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hcomram 0 0 ABS 0 comram dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbank6 0 0 ABS 0 bank6 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbank7 0 0 ABS 0 bank7 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lcinit 0 0 ABS 0 cinit dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lconst 0 0 CONST 0 const dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lidata 0 0 CODE 0 idata dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lparam 0 0 COMRAM 1 rparam dist/default/production\InterrupcaoTimer0.X.production.obj
+_leitura_ADC DBA 0 CODE 0 text2 dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Command@i 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lstack 0 0 STACK 2 stack dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext0 0 0 ABS 0 text0 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext1 0 0 ABS 0 text1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext2 0 0 ABS 0 text2 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext3 0 0 ABS 0 text3 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext4 0 0 ABS 0 text4 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext5 0 0 ABS 0 text5 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext6 0 0 ABS 0 text6 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext7 0 0 ABS 0 text7 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext8 0 0 ABS 0 text8 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext9 0 0 ABS 0 text9 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\InterrupcaoTimer0.X.production.obj
+__Habs1 0 0 ABS 0 abs1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hdata 0 0 ABS 0 data dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hinit 16 0 CODE 0 init dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htemp 36 0 COMRAM 1 temp dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext 0 0 ABS 0 text dist/default/production\InterrupcaoTimer0.X.production.obj
+__Labs1 0 0 ABS 0 abs1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ldata 0 0 ABS 0 data dist/default/production\InterrupcaoTimer0.X.production.obj
+__Linit 16 0 CODE 0 init dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltemp 35 0 COMRAM 1 temp dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext 0 0 ABS 0 text dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+int$flags 35 0 COMRAM 1 temp dist/default/production\InterrupcaoTimer0.X.production.obj
+_ADC_Inicializa D92 0 CODE 0 text4 dist/default/production\InterrupcaoTimer0.X.production.obj
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hintret 0 0 ABS 0 intret dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hirdata 0 0 CODE 0 irdata dist/default/production\InterrupcaoTimer0.X.production.obj
+__S0 30000E 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__S1 36 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__S2 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_VREGEN$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__pnvCOMRAM 33 0 COMRAM 1 nvCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_PLLDIV$5 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\InterrupcaoTimer0.X.production.obj
+int_func AFC 0 CODE 0 intcode_body dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lintentry 0 0 ABS 0 intentry dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hramtop 800 0 RAM 0 ramtop dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_LCD_Char_xy 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__activetblptr 2 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext10 0 0 ABS 0 text10 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext11 0 0 ABS 0 text11 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext12 0 0 ABS 0 text12 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Htext13 0 0 ABS 0 text13 dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_ADC_Inicializa DBA 0 CODE 0 text4 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext10 810 0 CODE 0 text10 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext11 8E8 0 CODE 0 text11 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext12 C22 0 CODE 0 text12 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext13 A78 0 CODE 0 text13 dist/default/production\InterrupcaoTimer0.X.production.obj
+___awdiv A78 0 CODE 0 text13 dist/default/production\InterrupcaoTimer0.X.production.obj
+delay_ms@tempo F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__pintcode_body AFC 0 CODE 0 intcode_body dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwdiv BD0 0 CODE 0 text6 dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwmod CB0 0 CODE 0 text5 dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_LCD_String_xy 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbigram 0 0 ABS 0 bigram dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_BOR$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_BORV$3 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lcomram 0 0 ABS 0 comram dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lconfig 300000 0 CONFIG 0 config dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_LCD_Command 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_String_xy@location 32 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_LCD_String 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwdiv@divisor 11 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_CCP2MX$ON 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+stackhi 7FF 0 ABS 0 - C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+stacklo 60 0 ABS 0 - C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+__Lintcode 8 0 CODE 0 intcode dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lintret 0 0 ABS 0 intret dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lirdata 0 0 CODE 0 irdata dist/default/production\InterrupcaoTimer0.X.production.obj
+_ADCON0bits FC2 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_ADCON1bits FC1 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_ADCON2bits FC0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_LCD_String_xy CB0 0 CODE 0 text7 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lspace_0 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lspace_1 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lspace_2 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_TripaSeca B7E 0 CODE 0 intcode_body dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_TripaSeca 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+delay_ms@i 11 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+delay_ms@j 13 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lend_init 16 0 CODE 0 end_init dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_delay_ms 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_FOSC$INTOSC_HS 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+end_of_initialization DDE 0 CODE 0 cinit dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hintentry 0 0 ABS 0 intentry dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_CPUDIV$OSC2_PLL3 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+___awdiv@quotient 15 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+?___awdiv F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+___lwdiv@dividend F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+?___lwdiv F 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+?___lwmod 16 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\InterrupcaoTimer0.X.production.obj
+_TripaSeca 8 0 CODE 0 intcode dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lramtop 800 0 RAM 0 ramtop dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Command@OUTS 19 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__pcinit DDE 0 CODE 0 cinit dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext0 9C0 0 CODE 0 text0 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext1 B7E 0 CODE 0 text1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext2 DBA 0 CODE 0 text2 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext3 D30 0 CODE 0 text3 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext4 D92 0 CODE 0 text4 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext5 CB0 0 CODE 0 text5 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext6 BD0 0 CODE 0 text6 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext7 C6C 0 CODE 0 text7 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext8 D68 0 CODE 0 text8 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ptext9 CF2 0 CODE 0 text9 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext10 0 0 ABS 0 text10 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext11 0 0 ABS 0 text11 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext12 0 0 ABS 0 text12 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Ltext13 0 0 ABS 0 text13 dist/default/production\InterrupcaoTimer0.X.production.obj
+__ramtop 800 0 RAM 0 ramtop C:\Users\eleli\AppData\Local\Temp\s9u8.obj
+__Lpowerup 16 0 CODE 0 powerup dist/default/production\InterrupcaoTimer0.X.production.obj
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_String@msg 2C 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__psmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\InterrupcaoTimer0.X.production.obj
+___param_bank 10 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of__initialization DDE 0 CODE 0 cinit dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_delay_ms C22 0 CODE 0 text12 dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_leitura_ADC DDE 0 CODE 0 text2 dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Char@i 2A 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_delay_ms C6C 0 CODE 0 text12 dist/default/production\InterrupcaoTimer0.X.production.obj
+LCD_Command@cmd 29 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hend_init 1A 0 CODE 0 end_init dist/default/production\InterrupcaoTimer0.X.production.obj
+_LCD_Char_xy CF2 0 CODE 0 text9 dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_PWRT$ON 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_main A78 0 CODE 0 text0 dist/default/production\InterrupcaoTimer0.X.production.obj
+__pintcode 8 0 CODE 0 intcode dist/default/production\InterrupcaoTimer0.X.production.obj
+_ADRES FC3 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_LATB2 7C52 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_LATB3 7C53 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_LATB4 7C54 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_LATB5 7C55 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_LATB6 7C56 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_LATB7 7C57 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_LATC7 7C5F 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_T0CON FD5 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TMR0L FD6 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TRISA F92 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_TRISC F94 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__end_of_setup BD0 0 CODE 0 text1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__HRAM 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hbss 0 0 RAM 1 bss dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hram 0 0 ABS 0 ram dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hsfr 0 0 ABS 0 sfr dist/default/production\InterrupcaoTimer0.X.production.obj
+__LRAM 1 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lbss 0 0 RAM 1 bss dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lram 0 0 ABS 0 ram dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lsfr 0 0 ABS 0 sfr dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+_setup B7E 0 CODE 0 text1 dist/default/production\InterrupcaoTimer0.X.production.obj
+__initialization DDE 0 CODE 0 cinit dist/default/production\InterrupcaoTimer0.X.production.obj
+_LCD_Command 810 0 CODE 0 text10 dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hsmallconst 810 0 SMALLCONST 0 smallconst dist/default/production\InterrupcaoTimer0.X.production.obj
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_LCD_Char 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__size_of_LCD_Init 0 0 ABS 0 - dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\InterrupcaoTimer0.X.production.obj
+__Hintcode 16 0 CODE 0 intcode dist/default/production\InterrupcaoTimer0.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+idloc 0 200000 200000 8 1
+text10 0 810 810 5DC 1
+cstackCOMRAM 1 1 1 35 1
+reset_vec 0 0 0 4 1
+intcode 0 8 8 12 1
+smallconst 0 800 800 10 1
+config 0 300000 300000 E 1

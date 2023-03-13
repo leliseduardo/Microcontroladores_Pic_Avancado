@@ -1,0 +1,12 @@
+main
+	__CC2DW
+		____DoICP
+	celsius
+		ADC_Read
+			Delay_22us
+		Mul_32x32_U
+		Div_32x32_S
+			SDIV3232L
+			COMFREM
+interrupt
+	display

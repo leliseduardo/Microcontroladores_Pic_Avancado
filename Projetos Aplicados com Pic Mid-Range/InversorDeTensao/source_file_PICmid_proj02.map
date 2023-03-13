@@ -1,0 +1,46 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Tue Apr 10 23:06:09 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x00006c
+.config_2007_SOURCE_FILE_PICMID_PROJ02.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000039      
+                            0x002007    0x002007      
+            56 out of 1158 program addresses used, program memory utilization is 4%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 dead_t_a   0x000018    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                 dead_t_b   0x00001e    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                    delay   0x00000e    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                 exit_ISR   0x000023    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                   inicio   0x000028    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+               trata_TMR0   0x00000b    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+               trata_TMR0   0x00000b    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                    delay   0x00000e    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                 dead_t_a   0x000018    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                 dead_t_b   0x00001e    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                 exit_ISR   0x000023    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+                   inicio   0x000028    program     static C:\You Tube - Meu Canal\ZZZ_Séries_Patrocinadas\Projetos Aplicados com PIC Mid-Range\PIC_MidRange_002__Oscilador_para_inversor_de_tensão_p2\PIC_mid_WR_files_002\source_file_PICmid_proj02.asm
+
+

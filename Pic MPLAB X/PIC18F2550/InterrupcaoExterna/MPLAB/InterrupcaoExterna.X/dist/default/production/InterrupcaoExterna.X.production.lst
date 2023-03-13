@@ -1,0 +1,812 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.38 build -256452561 
+                                                                                               Fri Aug 28 15:45:25 2020
+
+Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010351
+     1                           	processor	18F2550
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     7                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	intcode,global,reloc=2,class=CODE,delta=1
+    11                           	psect	intcode_body,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    13                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    14                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    15                           	psect	temp,global,ovrld,common,class=COMRAM,space=1,delta=1
+    16  0000                     _ADRES	set	4035
+    17  0000                     _ADCON0bits	set	4034
+    18  0000                     _ADCON1	set	4033
+    19  0000                     _ADCON1bits	set	4033
+    20  0000                     _ADCON2bits	set	4032
+    21  0000                     _INTCON	set	4082
+    22  0000                     _INTCON2	set	4081
+    23  0000                     _OSCCON	set	4051
+    24  0000                     _TRISB	set	3987
+    25  0000                     _INT0IF	set	32657
+    26  0000                     _LATB6	set	31830
+    27  0000                     _LATB7	set	31831
+    28                           
+    29                           ; #config settings
+    30  0000                     
+    31                           	psect	cinit
+    32  000168                     __pcinit:
+    33                           	opt stack 0
+    34  000168                     start_initialization:
+    35                           	opt stack 0
+    36  000168                     __initialization:
+    37                           	opt stack 0
+    38  000168                     end_of_initialization:
+    39                           	opt stack 0
+    40  000168                     __end_of__initialization:
+    41                           	opt stack 0
+    42  000168  901F               	bcf	int$flags,0,c	;clear compiler interrupt flag (level 1)
+    43  00016A  921F               	bcf	int$flags,1,c	;clear compiler interrupt flag (level 2)
+    44  00016C  0100               	movlb	0
+    45  00016E  EF99  F000         	goto	_main	;jump to C main() function
+    46                           
+    47                           	psect	cstackCOMRAM
+    48  000001                     __pcstackCOMRAM:
+    49                           	opt stack 0
+    50  000001                     i2delay_ms@tempo:
+    51                           	opt stack 0
+    52                           
+    53                           ; 2 bytes @ 0x0
+    54  000001                     	ds	2
+    55  000003                     i2delay_ms@i:
+    56                           	opt stack 0
+    57                           
+    58                           ; 2 bytes @ 0x2
+    59  000003                     	ds	2
+    60  000005                     i2delay_ms@j:
+    61                           	opt stack 0
+    62                           
+    63                           ; 4 bytes @ 0x4
+    64  000005                     	ds	4
+    65  000009                     ??_TripaSeca:
+    66                           
+    67                           ; 1 bytes @ 0x8
+    68  000009                     	ds	14
+    69  000017                     delay_ms@tempo:
+    70                           	opt stack 0
+    71                           
+    72                           ; 2 bytes @ 0x16
+    73  000017                     	ds	2
+    74  000019                     delay_ms@i:
+    75                           	opt stack 0
+    76                           
+    77                           ; 2 bytes @ 0x18
+    78  000019                     	ds	2
+    79  00001B                     delay_ms@j:
+    80                           	opt stack 0
+    81                           
+    82                           ; 4 bytes @ 0x1A
+    83  00001B                     	ds	4
+    84  00001F                     
+    85                           ; 1 bytes @ 0x1E
+    86 ;;
+    87 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    88 ;;
+    89 ;; *************** function _main *****************
+    90 ;; Defined at:
+    91 ;;		line 52 in file "main.c"
+    92 ;; Parameters:    Size  Location     Type
+    93 ;;		None
+    94 ;; Auto vars:     Size  Location     Type
+    95 ;;		None
+    96 ;; Return value:  Size  Location     Type
+    97 ;;                  1    wreg      void 
+    98 ;; Registers used:
+    99 ;;		wreg, status,2, status,0, cstack
+   100 ;; Tracked objects:
+   101 ;;		On entry : 0/0
+   102 ;;		On exit  : 0/0
+   103 ;;		Unchanged: 0/0
+   104 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   105 ;;      Params:         0       0       0       0       0       0       0       0       0
+   106 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   107 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   108 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   109 ;;Total ram usage:        0 bytes
+   110 ;; Hardware stack levels required when called:    3
+   111 ;; This function calls:
+   112 ;;		_delay_ms
+   113 ;;		_setup
+   114 ;; This function is called by:
+   115 ;;		Startup code after reset
+   116 ;; This function uses a non-reentrant model
+   117 ;;
+   118                           
+   119                           	psect	text0
+   120  000132                     __ptext0:
+   121                           	opt stack 0
+   122  000132                     _main:
+   123                           	opt stack 28
+   124                           
+   125                           ;main.c: 54: setup();
+   126                           
+   127                           ;incstack = 0
+   128  000132  ECA7  F000         	call	_setup	;wreg free
+   129  000136                     l754:
+   130                           
+   131                           ;main.c: 58: LATB7 = !LATB7;
+   132  000136  BE8A               	btfsc	3978,7,c	;volatile
+   133  000138  D002               	goto	u180
+   134  00013A  8E8A               	bsf	3978,7,c	;volatile
+   135  00013C  D001               	goto	l756
+   136  00013E                     u180:
+   137  00013E  9E8A               	bcf	3978,7,c	;volatile
+   138  000140                     l756:
+   139                           
+   140                           ;main.c: 59: delay_ms(220);
+   141  000140  0E00               	movlw	0
+   142  000142  6E18               	movwf	delay_ms@tempo+1,c
+   143  000144  0EDC               	movlw	220
+   144  000146  6E17               	movwf	delay_ms@tempo,c
+   145  000148  EC4F  F000         	call	_delay_ms	;wreg free
+   146  00014C  D7F4               	goto	l754
+   147  00014E                     __end_of_main:
+   148                           	opt stack 0
+   149                           
+   150 ;; *************** function _setup *****************
+   151 ;; Defined at:
+   152 ;;		line 25 in file "main.c"
+   153 ;; Parameters:    Size  Location     Type
+   154 ;;		None
+   155 ;; Auto vars:     Size  Location     Type
+   156 ;;		None
+   157 ;; Return value:  Size  Location     Type
+   158 ;;                  1    wreg      void 
+   159 ;; Registers used:
+   160 ;;		wreg, status,2
+   161 ;; Tracked objects:
+   162 ;;		On entry : 0/0
+   163 ;;		On exit  : 0/0
+   164 ;;		Unchanged: 0/0
+   165 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   166 ;;      Params:         0       0       0       0       0       0       0       0       0
+   167 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   168 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   169 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   170 ;;Total ram usage:        0 bytes
+   171 ;; Hardware stack levels used:    1
+   172 ;; Hardware stack levels required when called:    2
+   173 ;; This function calls:
+   174 ;;		Nothing
+   175 ;; This function is called by:
+   176 ;;		_main
+   177 ;; This function uses a non-reentrant model
+   178 ;;
+   179                           
+   180                           	psect	text1
+   181  00014E                     __ptext1:
+   182                           	opt stack 0
+   183  00014E                     _setup:
+   184                           	opt stack 28
+   185                           
+   186                           ;main.c: 27: ADCON1 = 0b00001111;
+   187                           
+   188                           ;incstack = 0
+   189  00014E  0E0F               	movlw	15
+   190  000150  6EC1               	movwf	4033,c	;volatile
+   191                           
+   192                           ;main.c: 28: OSCCON = 0b11111110;
+   193  000152  0EFE               	movlw	254
+   194  000154  6ED3               	movwf	4051,c	;volatile
+   195                           
+   196                           ;main.c: 29: TRISB = 0b00111111;
+   197  000156  0E3F               	movlw	63
+   198  000158  6E93               	movwf	3987,c	;volatile
+   199                           
+   200                           ;main.c: 30: LATB7 = 0b0;
+   201  00015A  9E8A               	bcf	3978,7,c	;volatile
+   202                           
+   203                           ;main.c: 31: LATB6 = 0b0;
+   204  00015C  9C8A               	bcf	3978,6,c	;volatile
+   205                           
+   206                           ;main.c: 33: INTCON = 0b10010000;
+   207  00015E  0E90               	movlw	144
+   208  000160  6EF2               	movwf	intcon,c	;volatile
+   209                           
+   210                           ;main.c: 34: INTCON2 = 0b10000000;
+   211  000162  0E80               	movlw	128
+   212  000164  6EF1               	movwf	intcon2,c	;volatile
+   213  000166  0012               	return		;funcret
+   214  000168                     __end_of_setup:
+   215                           	opt stack 0
+   216                           intcon	equ	0xFF2
+   217                           intcon2	equ	0xFF1
+   218                           
+   219 ;; *************** function _delay_ms *****************
+   220 ;; Defined at:
+   221 ;;		line 56 in file "PicLibs.h"
+   222 ;; Parameters:    Size  Location     Type
+   223 ;;  tempo           2   22[COMRAM] unsigned int 
+   224 ;; Auto vars:     Size  Location     Type
+   225 ;;  j               4   26[COMRAM] unsigned long 
+   226 ;;  i               2   24[COMRAM] unsigned int 
+   227 ;; Return value:  Size  Location     Type
+   228 ;;                  1    wreg      void 
+   229 ;; Registers used:
+   230 ;;		wreg, status,2, status,0
+   231 ;; Tracked objects:
+   232 ;;		On entry : 0/0
+   233 ;;		On exit  : 0/0
+   234 ;;		Unchanged: 0/0
+   235 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   236 ;;      Params:         2       0       0       0       0       0       0       0       0
+   237 ;;      Locals:         6       0       0       0       0       0       0       0       0
+   238 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   239 ;;      Totals:         8       0       0       0       0       0       0       0       0
+   240 ;;Total ram usage:        8 bytes
+   241 ;; Hardware stack levels used:    1
+   242 ;; Hardware stack levels required when called:    2
+   243 ;; This function calls:
+   244 ;;		Nothing
+   245 ;; This function is called by:
+   246 ;;		_main
+   247 ;; This function uses a non-reentrant model
+   248 ;;
+   249                           
+   250                           	psect	text2
+   251  00009E                     __ptext2:
+   252                           	opt stack 0
+   253  00009E                     _delay_ms:
+   254                           	opt stack 28
+   255                           
+   256                           ;PicLibs.h: 58: unsigned int i;
+   257                           ;PicLibs.h: 59: unsigned long j;
+   258                           ;PicLibs.h: 61: for(i = 0; i < tempo; i++){
+   259                           
+   260                           ;incstack = 0
+   261  00009E  0E00               	movlw	0
+   262  0000A0  6E1A               	movwf	delay_ms@i+1,c
+   263  0000A2  0E00               	movlw	0
+   264  0000A4  6E19               	movwf	delay_ms@i,c
+   265  0000A6  D019               	goto	l728
+   266  0000A8                     l718:
+   267                           
+   268                           ;PicLibs.h: 62: for(j = 0; j < 8000000/65200; j++);
+   269  0000A8  0E00               	movlw	0
+   270  0000AA  6E1B               	movwf	delay_ms@j,c
+   271  0000AC  0E00               	movlw	0
+   272  0000AE  6E1C               	movwf	delay_ms@j+1,c
+   273  0000B0  0E00               	movlw	0
+   274  0000B2  6E1D               	movwf	delay_ms@j+2,c
+   275  0000B4  0E00               	movlw	0
+   276  0000B6  6E1E               	movwf	delay_ms@j+3,c
+   277  0000B8                     l720:
+   278  0000B8  501E               	movf	delay_ms@j+3,w,c
+   279  0000BA  101D               	iorwf	delay_ms@j+2,w,c
+   280  0000BC  101C               	iorwf	delay_ms@j+1,w,c
+   281  0000BE  E10B               	bnz	l726
+   282  0000C0  0E7A               	movlw	122
+   283  0000C2  5C1B               	subwf	delay_ms@j,w,c
+   284  0000C4  B0D8               	btfsc	status,0,c
+   285  0000C6  D007               	goto	l726
+   286  0000C8  0E01               	movlw	1
+   287  0000CA  261B               	addwf	delay_ms@j,f,c
+   288  0000CC  0E00               	movlw	0
+   289  0000CE  221C               	addwfc	delay_ms@j+1,f,c
+   290  0000D0  221D               	addwfc	delay_ms@j+2,f,c
+   291  0000D2  221E               	addwfc	delay_ms@j+3,f,c
+   292  0000D4  D7F1               	goto	l720
+   293  0000D6                     l726:
+   294  0000D6  4A19               	infsnz	delay_ms@i,f,c
+   295  0000D8  2A1A               	incf	delay_ms@i+1,f,c
+   296  0000DA                     l728:
+   297  0000DA  5017               	movf	delay_ms@tempo,w,c
+   298  0000DC  5C19               	subwf	delay_ms@i,w,c
+   299  0000DE  5018               	movf	delay_ms@tempo+1,w,c
+   300  0000E0  581A               	subwfb	delay_ms@i+1,w,c
+   301  0000E2  B0D8               	btfsc	status,0,c
+   302  0000E4  0012               	return	
+   303  0000E6  D7E0               	goto	l718
+   304  0000E8                     __end_of_delay_ms:
+   305                           	opt stack 0
+   306                           intcon	equ	0xFF2
+   307                           intcon2	equ	0xFF1
+   308                           status	equ	0xFD8
+   309                           
+   310 ;; *************** function _TripaSeca *****************
+   311 ;; Defined at:
+   312 ;;		line 38 in file "main.c"
+   313 ;; Parameters:    Size  Location     Type
+   314 ;;		None
+   315 ;; Auto vars:     Size  Location     Type
+   316 ;;		None
+   317 ;; Return value:  Size  Location     Type
+   318 ;;                  1    wreg      void 
+   319 ;; Registers used:
+   320 ;;		wreg, status,2, status,0, cstack
+   321 ;; Tracked objects:
+   322 ;;		On entry : 0/0
+   323 ;;		On exit  : 0/0
+   324 ;;		Unchanged: 0/0
+   325 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   326 ;;      Params:         0       0       0       0       0       0       0       0       0
+   327 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   328 ;;      Temps:         14       0       0       0       0       0       0       0       0
+   329 ;;      Totals:        14       0       0       0       0       0       0       0       0
+   330 ;;Total ram usage:       14 bytes
+   331 ;; Hardware stack levels used:    1
+   332 ;; Hardware stack levels required when called:    1
+   333 ;; This function calls:
+   334 ;;		i2_delay_ms
+   335 ;; This function is called by:
+   336 ;;		Interrupt level 2
+   337 ;; This function uses a non-reentrant model
+   338 ;;
+   339                           
+   340                           	psect	intcode
+   341  000008                     __pintcode:
+   342                           	opt stack 0
+   343  000008                     _TripaSeca:
+   344                           	opt stack 28
+   345                           
+   346                           ;incstack = 0
+   347  000008  821F               	bsf	btemp,1,c	;set compiler interrupt flag (level 2)
+   348  00000A  CFFA F009          	movff	pclath,??_TripaSeca
+   349  00000E  CFFB F00A          	movff	pclatu,??_TripaSeca+1
+   350  000012  ED0D  F000         	call	int_func,f	;refresh shadow registers
+   351                           pclatu	equ	0xFFB
+   352                           pclath	equ	0xFFA
+   353                           intcon	equ	0xFF2
+   354                           intcon2	equ	0xFF1
+   355                           status	equ	0xFD8
+   356                           
+   357                           	psect	intcode_body
+   358  00001A                     __pintcode_body:
+   359                           	opt stack 28
+   360  00001A                     int_func:
+   361                           	opt stack 28
+   362  00001A  0006               	pop		; remove dummy address from shadow register refresh
+   363  00001C  CFE9 F00B          	movff	fsr0l,??_TripaSeca+2
+   364  000020  CFEA F00C          	movff	fsr0h,??_TripaSeca+3
+   365  000024  CFE1 F00D          	movff	fsr1l,??_TripaSeca+4
+   366  000028  CFE2 F00E          	movff	fsr1h,??_TripaSeca+5
+   367  00002C  CFD9 F00F          	movff	fsr2l,??_TripaSeca+6
+   368  000030  CFDA F010          	movff	fsr2h,??_TripaSeca+7
+   369  000034  CFF3 F011          	movff	prodl,??_TripaSeca+8
+   370  000038  CFF4 F012          	movff	prodh,??_TripaSeca+9
+   371  00003C  CFF6 F013          	movff	tblptrl,??_TripaSeca+10
+   372  000040  CFF7 F014          	movff	tblptrh,??_TripaSeca+11
+   373  000044  CFF8 F015          	movff	tblptru,??_TripaSeca+12
+   374  000048  CFF5 F016          	movff	tablat,??_TripaSeca+13
+   375                           
+   376                           ;main.c: 40: if(INT0IF){
+   377  00004C  A2F2               	btfss	intcon,1,c	;volatile
+   378  00004E  D009               	goto	i2l48
+   379                           
+   380                           ;main.c: 42: INT0IF = 0;
+   381  000050  92F2               	bcf	intcon,1,c	;volatile
+   382                           
+   383                           ;main.c: 44: LATB6 = 1;
+   384  000052  8C8A               	bsf	3978,6,c	;volatile
+   385                           
+   386                           ;main.c: 45: delay_ms(2000);
+   387  000054  0E07               	movlw	7
+   388  000056  6E02               	movwf	i2delay_ms@tempo+1,c
+   389  000058  0ED0               	movlw	208
+   390  00005A  6E01               	movwf	i2delay_ms@tempo,c
+   391  00005C  EC74  F000         	call	i2_delay_ms	;wreg free
+   392                           
+   393                           ;main.c: 46: LATB6 = 0;
+   394  000060  9C8A               	bcf	3978,6,c	;volatile
+   395  000062                     i2l48:
+   396  000062  C016  FFF5         	movff	??_TripaSeca+13,tablat
+   397  000066  C015  FFF8         	movff	??_TripaSeca+12,tblptru
+   398  00006A  C014  FFF7         	movff	??_TripaSeca+11,tblptrh
+   399  00006E  C013  FFF6         	movff	??_TripaSeca+10,tblptrl
+   400  000072  C012  FFF4         	movff	??_TripaSeca+9,prodh
+   401  000076  C011  FFF3         	movff	??_TripaSeca+8,prodl
+   402  00007A  C010  FFDA         	movff	??_TripaSeca+7,fsr2h
+   403  00007E  C00F  FFD9         	movff	??_TripaSeca+6,fsr2l
+   404  000082  C00E  FFE2         	movff	??_TripaSeca+5,fsr1h
+   405  000086  C00D  FFE1         	movff	??_TripaSeca+4,fsr1l
+   406  00008A  C00C  FFEA         	movff	??_TripaSeca+3,fsr0h
+   407  00008E  C00B  FFE9         	movff	??_TripaSeca+2,fsr0l
+   408  000092  C00A  FFFB         	movff	??_TripaSeca+1,pclatu
+   409  000096  C009  FFFA         	movff	??_TripaSeca,pclath
+   410  00009A  921F               	bcf	btemp,1,c	;clear compiler interrupt flag (level 2)
+   411  00009C  0011               	retfie		f
+   412  00009E                     __end_of_TripaSeca:
+   413                           	opt stack 0
+   414                           pclatu	equ	0xFFB
+   415                           pclath	equ	0xFFA
+   416                           tblptru	equ	0xFF8
+   417                           tblptrh	equ	0xFF7
+   418                           tblptrl	equ	0xFF6
+   419                           tablat	equ	0xFF5
+   420                           prodh	equ	0xFF4
+   421                           prodl	equ	0xFF3
+   422                           intcon	equ	0xFF2
+   423                           intcon2	equ	0xFF1
+   424                           fsr0h	equ	0xFEA
+   425                           fsr0l	equ	0xFE9
+   426                           fsr1h	equ	0xFE2
+   427                           fsr1l	equ	0xFE1
+   428                           fsr2h	equ	0xFDA
+   429                           fsr2l	equ	0xFD9
+   430                           status	equ	0xFD8
+   431                           
+   432 ;; *************** function i2_delay_ms *****************
+   433 ;; Defined at:
+   434 ;;		line 56 in file "PicLibs.h"
+   435 ;; Parameters:    Size  Location     Type
+   436 ;;  tempo           2    0[COMRAM] unsigned int 
+   437 ;; Auto vars:     Size  Location     Type
+   438 ;;  delay_ms        4    4[COMRAM] unsigned long 
+   439 ;;  delay_ms        2    2[COMRAM] unsigned int 
+   440 ;; Return value:  Size  Location     Type
+   441 ;;                  1    wreg      void 
+   442 ;; Registers used:
+   443 ;;		wreg, status,2, status,0
+   444 ;; Tracked objects:
+   445 ;;		On entry : 0/0
+   446 ;;		On exit  : 0/0
+   447 ;;		Unchanged: 0/0
+   448 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   449 ;;      Params:         2       0       0       0       0       0       0       0       0
+   450 ;;      Locals:         6       0       0       0       0       0       0       0       0
+   451 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   452 ;;      Totals:         8       0       0       0       0       0       0       0       0
+   453 ;;Total ram usage:        8 bytes
+   454 ;; Hardware stack levels used:    1
+   455 ;; This function calls:
+   456 ;;		Nothing
+   457 ;; This function is called by:
+   458 ;;		_TripaSeca
+   459 ;; This function uses a non-reentrant model
+   460 ;;
+   461                           
+   462                           	psect	text4
+   463  0000E8                     __ptext4:
+   464                           	opt stack 0
+   465  0000E8                     i2_delay_ms:
+   466                           	opt stack 28
+   467                           
+   468                           ;PicLibs.h: 58: unsigned int i;
+   469                           ;PicLibs.h: 59: unsigned long j;
+   470                           ;PicLibs.h: 61: for(i = 0; i < tempo; i++){
+   471                           
+   472                           ;incstack = 0
+   473  0000E8  0E00               	movlw	0
+   474  0000EA  6E04               	movwf	i2delay_ms@i+1,c
+   475  0000EC  0E00               	movlw	0
+   476  0000EE  6E03               	movwf	i2delay_ms@i,c
+   477  0000F0  D019               	goto	i2l742
+   478  0000F2                     i2l732:
+   479                           
+   480                           ;PicLibs.h: 62: for(j = 0; j < 8000000/65200; j++);
+   481  0000F2  0E00               	movlw	0
+   482  0000F4  6E05               	movwf	i2delay_ms@j,c
+   483  0000F6  0E00               	movlw	0
+   484  0000F8  6E06               	movwf	i2delay_ms@j+1,c
+   485  0000FA  0E00               	movlw	0
+   486  0000FC  6E07               	movwf	i2delay_ms@j+2,c
+   487  0000FE  0E00               	movlw	0
+   488  000100  6E08               	movwf	i2delay_ms@j+3,c
+   489  000102                     i2l734:
+   490  000102  5008               	movf	i2delay_ms@j+3,w,c
+   491  000104  1007               	iorwf	i2delay_ms@j+2,w,c
+   492  000106  1006               	iorwf	i2delay_ms@j+1,w,c
+   493  000108  E10B               	bnz	i2l740
+   494  00010A  0E7A               	movlw	122
+   495  00010C  5C05               	subwf	i2delay_ms@j,w,c
+   496  00010E  B0D8               	btfsc	status,0,c
+   497  000110  D007               	goto	i2l740
+   498  000112  0E01               	movlw	1
+   499  000114  2605               	addwf	i2delay_ms@j,f,c
+   500  000116  0E00               	movlw	0
+   501  000118  2206               	addwfc	i2delay_ms@j+1,f,c
+   502  00011A  2207               	addwfc	i2delay_ms@j+2,f,c
+   503  00011C  2208               	addwfc	i2delay_ms@j+3,f,c
+   504  00011E  D7F1               	goto	i2l734
+   505  000120                     i2l740:
+   506  000120  4A03               	infsnz	i2delay_ms@i,f,c
+   507  000122  2A04               	incf	i2delay_ms@i+1,f,c
+   508  000124                     i2l742:
+   509  000124  5001               	movf	i2delay_ms@tempo,w,c
+   510  000126  5C03               	subwf	i2delay_ms@i,w,c
+   511  000128  5002               	movf	i2delay_ms@tempo+1,w,c
+   512  00012A  5804               	subwfb	i2delay_ms@i+1,w,c
+   513  00012C  B0D8               	btfsc	status,0,c
+   514  00012E  0012               	return	
+   515  000130  D7E0               	goto	i2l732
+   516  000132                     __end_ofi2_delay_ms:
+   517                           	opt stack 0
+   518  0000                     pclatu	equ	0xFFB
+   519                           pclath	equ	0xFFA
+   520                           tblptru	equ	0xFF8
+   521                           tblptrh	equ	0xFF7
+   522                           tblptrl	equ	0xFF6
+   523                           tablat	equ	0xFF5
+   524                           prodh	equ	0xFF4
+   525                           prodl	equ	0xFF3
+   526                           intcon	equ	0xFF2
+   527                           intcon2	equ	0xFF1
+   528                           fsr0h	equ	0xFEA
+   529                           fsr0l	equ	0xFE9
+   530                           fsr1h	equ	0xFE2
+   531                           fsr1l	equ	0xFE1
+   532                           fsr2h	equ	0xFDA
+   533                           fsr2l	equ	0xFD9
+   534                           status	equ	0xFD8
+   535                           pclatu	equ	0xFFB
+   536                           pclath	equ	0xFFA
+   537                           tblptru	equ	0xFF8
+   538                           tblptrh	equ	0xFF7
+   539                           tblptrl	equ	0xFF6
+   540                           tablat	equ	0xFF5
+   541                           prodh	equ	0xFF4
+   542                           prodl	equ	0xFF3
+   543                           intcon	equ	0xFF2
+   544                           intcon2	equ	0xFF1
+   545                           fsr0h	equ	0xFEA
+   546                           fsr0l	equ	0xFE9
+   547                           fsr1h	equ	0xFE2
+   548                           fsr1l	equ	0xFE1
+   549                           fsr2h	equ	0xFDA
+   550                           fsr2l	equ	0xFD9
+   551                           status	equ	0xFD8
+   552                           
+   553                           	psect	rparam
+   554  0000                     pclatu	equ	0xFFB
+   555                           pclath	equ	0xFFA
+   556                           tblptru	equ	0xFF8
+   557                           tblptrh	equ	0xFF7
+   558                           tblptrl	equ	0xFF6
+   559                           tablat	equ	0xFF5
+   560                           prodh	equ	0xFF4
+   561                           prodl	equ	0xFF3
+   562                           intcon	equ	0xFF2
+   563                           intcon2	equ	0xFF1
+   564                           fsr0h	equ	0xFEA
+   565                           fsr0l	equ	0xFE9
+   566                           fsr1h	equ	0xFE2
+   567                           fsr1l	equ	0xFE1
+   568                           fsr2h	equ	0xFDA
+   569                           fsr2l	equ	0xFD9
+   570                           status	equ	0xFD8
+   571                           
+   572                           	psect	temp
+   573  00001F                     btemp:
+   574                           	opt stack 0
+   575  00001F                     	ds	1
+   576  0000                     int$flags	set	btemp
+   577                           pclatu	equ	0xFFB
+   578                           pclath	equ	0xFFA
+   579                           tblptru	equ	0xFF8
+   580                           tblptrh	equ	0xFF7
+   581                           tblptrl	equ	0xFF6
+   582                           tablat	equ	0xFF5
+   583                           prodh	equ	0xFF4
+   584                           prodl	equ	0xFF3
+   585                           intcon	equ	0xFF2
+   586                           intcon2	equ	0xFF1
+   587                           fsr0h	equ	0xFEA
+   588                           fsr0l	equ	0xFE9
+   589                           fsr1h	equ	0xFE2
+   590                           fsr1l	equ	0xFE1
+   591                           fsr2h	equ	0xFDA
+   592                           fsr2l	equ	0xFD9
+   593                           status	equ	0xFD8
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           94     30      30
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_delay_ms
+
+Critical Paths under _TripaSeca in COMRAM
+
+    _TripaSeca->i2_delay_ms
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _TripaSeca in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _TripaSeca in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _TripaSeca in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _TripaSeca in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _TripaSeca in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _TripaSeca in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _TripaSeca in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Critical Paths under _TripaSeca in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     152
+                           _delay_ms
+                              _setup
+ ---------------------------------------------------------------------------------
+ (1) _setup                                                0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _delay_ms                                             8     6      2     152
+                                             22 COMRAM     8     6      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (2) _TripaSeca                                           14    14      0     118
+                                              8 COMRAM    14    14      0
+                         i2_delay_ms
+ ---------------------------------------------------------------------------------
+ (3) i2_delay_ms                                           8     6      2     118
+                                              0 COMRAM     8     6      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _delay_ms
+   _setup
+
+ _TripaSeca (ROOT)
+   i2_delay_ms
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5E     1E      1E       1       31.9%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+ABS                  0      0       0      20        0.0%
+BIGRAM             7FF      0       0      21        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.38 build -256452561 
+Symbol Table                                                                                   Fri Aug 28 15:45:25 2020
+
+            __CFG_BORV$3 000000             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
+           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000                      l720 00B8  
+                    l726 00D6                      l718 00A8                      l728 00DA  
+                    l754 0136                      l756 0140             __CFG_CPB$OFF 000000  
+                    u180 013E             __CFG_CPD$OFF 000000             __CFG_BOR$OFF 000000  
+             i2_delay_ms 00E8             __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000  
+                   i2l48 0062             __CFG_PWRT$ON 000000                     _main 0132  
+                   fsr0h 000FEA                     fsr1h 000FE2                     fsr0l 000FE9  
+                   fsr2h 000FDA                     fsr1l 000FE1                     fsr2l 000FD9  
+                   btemp 001F                     pclat 000FFA                     prodh 000FF4  
+                   prodl 000FF3                     start 0016            __CFG_IESO$OFF 000000  
+          __CFG_MCLRE$ON 000000             ___param_bank 000010            __CFG_PLLDIV$5 000000  
+         __CFG_CCP2MX$ON 000000                    ?_main 0001                    _ADRES 000FC3  
+                  _LATB6 007C56                    _LATB7 007C57                    i2l740 0120  
+                  i2l732 00F2                    i2l734 0102                    i2l742 0124  
+          __CFG_USBDIV$2 000000                    _TRISB 000F93            __CFG_WRT0$OFF 000000  
+          __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000            __CFG_WRT3$OFF 000000  
+         __CFG_EBTR0$OFF 000000           __CFG_FCMEN$OFF 000000           __CFG_EBTR1$OFF 000000  
+         __CFG_EBTR2$OFF 000000           __CFG_EBTR3$OFF 000000            __CFG_WRTB$OFF 000000  
+          __CFG_WRTC$OFF 000000            __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000  
+                  _setup 014E                    tablat 000FF5                    status 000FD8  
+            i2delay_ms@i 0003              i2delay_ms@j 0005          __initialization 0168  
+           __end_of_main 014E                   ??_main 001F            __activetblptr 000000  
+            ?i2_delay_ms 0001                   _ADCON1 000FC1                   ?_setup 0001  
+                 _INT0IF 007F91                   _INTCON 000FF2                   _OSCCON 000FD3  
+       __end_of_delay_ms 00E8           __CFG_XINST$OFF 000000           __CFG_STVREN$ON 000000  
+                 tblptrh 000FF7                   tblptrl 000FF6                   tblptru 000FF8  
+     __size_of_TripaSeca 0096               __accesstop 0060  __end_of__initialization 0168  
+        __CFG_PBADEN$OFF 000000            ___rparam_used 000001           __pcstackCOMRAM 0001  
+    __size_ofi2_delay_ms 004A            __end_of_setup 0168                  ??_setup 0017  
+      __end_of_TripaSeca 009E                  _INTCON2 000FF1                ?_delay_ms 0017  
+        __CFG_VREGEN$OFF 000000                  __Hparam 0000                  __Lparam 0000  
+                __pcinit 0168                  __ramtop 0800                  __ptext0 0132  
+                __ptext1 014E                  __ptext2 009E                  __ptext4 00E8  
+           ??i2_delay_ms 0003               ??_delay_ms 0019           __pintcode_body 001A  
+   end_of_initialization 0168                  int_func 001A       __end_ofi2_delay_ms 0132  
+          delay_ms@tempo 0017      start_initialization 0168         __CFG_LPT1OSC$OFF 000000  
+              _TripaSeca 0008        __size_of_delay_ms 004A                __pintcode 0008  
+             ?_TripaSeca 0001           __size_of_setup 001A                delay_ms@i 0019  
+              delay_ms@j 001B         __CFG_WDTPS$32768 000000               _ADCON0bits 000FC2  
+             _ADCON1bits 000FC1               _ADCON2bits 000FC0                 __Hrparam 0000  
+               __Lrparam 0000              ??_TripaSeca 0009                 _delay_ms 009E  
+          __size_of_main 001C                 int$flags 001F    __CFG_CPUDIV$OSC2_PLL3 000000  
+               intlevel2 0000      __CFG_FOSC$INTOSC_HS 000000          i2delay_ms@tempo 0001  
